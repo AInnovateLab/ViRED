@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="ViRED: A novel approach to predict relations in engineering drawings.">
+  <meta property="og:title" content="ViRED: Prediction of Visual Relations in Engineering Drawings" />
+  <meta property="og:description" content="ViRED: A novel approach to predict relations in engineering drawings." />
+  <meta property="og:url" content="https://ainnovatelab.github.io/ViRED/" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="https://ainnovatelab.github.io/ViRED/static/images/og_image.png" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="805" />
+
+
+  <meta name="twitter:title" content="ViRED: Prediction of Visual Relations in Engineering Drawings">
+  <meta name="twitter:description" content="ViRED: A novel approach to predict relations in engineering drawings.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="https://ainnovatelab.github.io/ViRED/static/images/og_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="visual relation prediction,engineering drawing,document understanding">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>ViRED: Prediction of Visual Relations in Engineering Drawings</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">ViRED: Prediction of Visual Relations in Engineering Drawings</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://guch8017.github.io/researcher" target="_blank">Chao Gu</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://leonardodalinky.github.io/researcher" target="_blank">Ke Lin</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://mrtater.github.io/" target="_blank">Yiyang Luo</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=z2gblvQAAAAJ&hl=en" target="_blank">Jiahui
+                  Hou</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="http://staff.ustc.edu.cn/~xiangyangli/" target="_blank">Xiang-Yang Li</a><sup>1</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>University of Science and Technology of China,</span>
+              <span class="author-block"><sup>2</sup>Tsinghua University,</span>
+              <span class="author-block"><sup>3</sup>Nanyang Technological University</span>
+              <br>
+              <span class="author-block">Under Review</span>
+              <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small></span> -->
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="javascript:void(0);" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper(TBD)</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/AInnovateLab/ViRED" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/TODO" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <!-- <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <source src="static/videos/banner_video.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat
+          pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.
+        </h2>
+      </div>
+    </div>
+  </section> -->
+  <!-- End teaser video -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-4 has-text-centered">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              To accurately understand engineering drawings, it is essential to establish the correspondence between
+              images and their description tables within the drawings.
+              Existing document understanding methods predominantly focus on text as the main modality, which is not
+              suitable for documents containing substantial image information.
+              In the field of visual relation detection, the structure of the task inherently limits its capacity to
+              assess relationships among all entity pairs in the drawings.
+              To address this issue, we propose a vision-based relation detection model, named <strong>ViRED</strong>,
+              to identify the
+              associations between tables and circuits in electrical engineering drawings.
+              Our model mainly consists of three parts: a vision encoder, an object encoder, and a relation decoder.
+              To validate the efficacy of ViRED, we conduct a series of experiments.
+              The experimental results indicate that, within the engineering drawing dataset, our approach attained an
+              accuracy of 96\% in the task of relation prediction, marking a substantial improvement over existing
+              methodologies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+  <!-- Image carousel -->
+  <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img src="static/images/carousel1.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              First image description.
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel2.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              Second image description.
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel3.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              Third image description.
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel4.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              Fourth image description.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End image carousel -->
+
+
+
+
+  <!-- Youtube video -->
+  <!-- <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Video Presentation</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+
+            <div class="publication-video">
+              <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End youtube video -->
+
+
+  <!-- Video carousel -->
+  <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Another Carousel</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video1">
+            <video poster="" id="video1" autoplay controls muted loop height="100%">
+              <source src="static/videos/carousel1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video2">
+            <video poster="" id="video2" autoplay controls muted loop height="100%">
+              <source src="static/videos/carousel2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video3">
+            <video poster="" id="video3" autoplay controls muted loop height="100%">\
+              <source src="static/videos/carousel3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End video carousel -->
+
+  <section class="section hero is-small">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <h2 class="title is-4 has-text-centered">Summary</h2>
+          <div class="content">
+            <div class="has-text-justified">
+              <p>
+                In summary, the contributions of our work are as follows:
+              <ul>
+                <li>We present a novel vision-based relation detection approach, named <strong>ViRED</strong>, to
+                  address the issue of
+                  predicting relations for non-textual components in complex documents. This approach has been
+                  specifically implemented for the purpose of circuit-to-table relation matching in electrical design
+                  drawings.
+                </li>
+                <li>We develop a dataset of electrical engineering drawings derived from industrial design data, and we
+                  annotate the instances and their relationships within the dataset.</li>
+                <li>We evaluate our method using various metrics on the electrical engineering drawing dataset.
+                  Furthermore, we perform comparative analyses with existing approaches and provide a performance
+                  comparison between the existing methods and our proposed technique.</li>
+                <li>We perform extensive ablation studies to compare the impact of different model architectures,
+                  hyperparameters, and training methods on the overall performance. Moreover, we refined our model
+                  architecture based on these comparative analyses.</li>
+              </ul>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container  is-max-desktop">
+        <h2 class="title is-4 has-text-centered">Methodology</h2>
+        <div class="has-text-justified">
+          <img src="static/images/general_pipeline.svg" alt="Overview pipeline of ViRED." class="center-image"
+            width="95%" />
+          <br>
+          <p>
+          <ol type="a">
+            <li>Engineering drawings are processed through the Vision Encoder, Object Encoder, Relation Decoder, and
+              Relation Prediction Model.</li>
+            <li>The Object Encoder converts the instance masks and types into mask and type embeddings, which are then
+              aggregated to form the object tokens.</li>
+            <li>The Relation Decoder utilizes the object tokens as inputs and integrates them with the image features
+              from the Vision Encoder through a cross-attention mechanism. Residual connections between layers are
+              ignored for simplicity.</li>
+            <li>While pretraining, the model encodes the document images and position masks, and after decoding through
+              the relation decoder, it predicts the image classification of the position where the mask is located.</li>
+          </ol>
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+
+  <section class="section hero is-small">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title is-4 has-text-centered">Experiments</h2>
+            <img src="static/images/comparison.png" alt="Comparison to previous works." class="center-image"
+              width="50%" />
+            <br>
+            <div class="has-text-centered">
+              <strong><em>Comparison to Previous Works</em></strong>
+            </div>
+            <hr />
+            <img src="static/images/ablation_arch.png" alt="Ablation for architectures." class="center-image"
+              width="60%" />
+            <br>
+            <img src="static/images/ablation_param.png" alt="Ablation for hyperparameters." class="center-image"
+              width="95%" />
+            <br>
+            <div class="has-text-centered">
+              <strong><em>Ablation Study</em></strong>
+            </div>
+            <hr />
+            <img src="static/images/TODO" alt="Inference Efficiency" class="center-image" />
+            <br>
+            <div class="has-text-centered">
+              <strong><em>Effectiveness of Instructions</em></strong>
+            </div>
+            <!-- <div class="container mt-4">
+              <div class="alert alert-danger" role="alert">
+                <strong>Implications:</strong> SoTA LLMs that use LoRA for alignment fine-tuning are vulnerable to
+                Pre-FT weight recovery attacks
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img src="static/images/ablation_arch.png" alt="MY ALT TEXT" width="50%" />
+            <img src="static/images/ablation_arch.png" alt="MY ALT TEXT" width="50%" />
+            <h2 class="subtitle has-text-centered">
+              First image description.
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel2.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              Second image description.
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel3.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              Third image description.
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel4.jpg" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              Fourth image description.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Paper poster -->
+  <!-- <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title">Poster</h2>
+
+        <iframe src="static/pdfs/sample.pdf" width="100%" height="550">
+        </iframe>
+
+      </div>
+    </div>
+  </section> -->
+  <!--End paper poster -->
+
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+TODO
+      </code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was modified by K. Lin and C. Gu using the <a
+                href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project
+                Page Template</a> which was adopted from the <a href="https://nerfies.github.io"
+                target="_blank">Nerfies</a> project page.
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+                target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
