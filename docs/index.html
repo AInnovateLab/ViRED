@@ -87,6 +87,7 @@
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
+                    <!-- TODO -->
                     <span>Paper(TBD)</span>
                   </a>
                 </span>
@@ -151,14 +152,16 @@
               suitable for documents containing substantial image information.
               In the field of visual relation detection, the structure of the task inherently limits its capacity to
               assess relationships among all entity pairs in the drawings.
-              To address this issue, we propose a vision-based relation detection model, named <strong>ViRED</strong>,
-              to identify the
+              To address this issue, we propose a vision-based relation detection model, named ViRED, to identify the
               associations between tables and circuits in electrical engineering drawings.
               Our model mainly consists of three parts: a vision encoder, an object encoder, and a relation decoder.
+              We implement ViRED using PyTorch to evaluate its performance.
               To validate the efficacy of ViRED, we conduct a series of experiments.
               The experimental results indicate that, within the engineering drawing dataset, our approach attained an
-              accuracy of 96\% in the task of relation prediction, marking a substantial improvement over existing
+              accuracy of 96% in the task of relation prediction, marking a substantial improvement over existing
               methodologies.
+              The results also show that ViRED can inference at a fast speed even when there are numerous objects in a
+              single engineering drawing.
             </p>
           </div>
         </div>
@@ -341,10 +344,10 @@
               <strong><em>Ablation Study</em></strong>
             </div>
             <hr />
-            <img src="static/images/TODO" alt="Inference Efficiency" class="center-image" />
+            <img src="static/images/flops.png" alt="FLOPs" class="center-image" width="50%" />
             <br>
             <div class="has-text-centered">
-              <strong><em>Effectiveness of Instructions</em></strong>
+              <strong><em>Efficiency</em></strong>
             </div>
             <!-- <div class="container mt-4">
               <div class="alert alert-danger" role="alert">
@@ -360,31 +363,22 @@
   <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container">
+        <h2 class="title is-4 has-text-centered">Examples</h2>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
-            <img src="static/images/ablation_arch.png" alt="MY ALT TEXT" width="50%" />
-            <img src="static/images/ablation_arch.png" alt="MY ALT TEXT" width="50%" />
-            <h2 class="subtitle has-text-centered">
+            <img src="static/images/0_predict.png" alt="Prediction 0" />
+            <!-- <h2 class="subtitle has-text-centered">
               First image description.
-            </h2>
+            </h2> -->
           </div>
           <div class="item">
-            <img src="static/images/carousel2.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              Second image description.
-            </h2>
+            <img src="static/images/1_predict.png" alt="Prediction 1" />
           </div>
           <div class="item">
-            <img src="static/images/carousel3.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              Third image description.
-            </h2>
+            <img src="static/images/2_predict.png" alt="Prediction 2" />
           </div>
           <div class="item">
-            <img src="static/images/carousel4.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              Fourth image description.
-            </h2>
+            <img src="static/images/3_predict.png" alt="Prediction 3" />
           </div>
         </div>
       </div>
